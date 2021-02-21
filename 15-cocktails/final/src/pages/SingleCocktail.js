@@ -13,7 +13,7 @@ export default function SingleCocktail() {
       try {
         const response = await fetch(
           `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`
-        )
+          //  const response = await fetch(`${url}${id}`);
         const data = await response.json()
         if (data.drinks) {
           const {
