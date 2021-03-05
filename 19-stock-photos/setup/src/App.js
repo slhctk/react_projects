@@ -16,8 +16,8 @@ function App() {
     try {
       const response= await fetch(url);
       const data= await response.json();
-      setPhotos= (data);
-      setLoading=(false);
+      setPhotos(data);
+      setLoading(false);
     } catch (error) {
       setLoading(false);
      console.log(error) 
@@ -43,11 +43,12 @@ function App() {
       </form>
     </section>
     <section className="photos">
-      <div className="photos ceneter">
-        {photos.map((image, index)=>{
-          return <Photo key={index} {...image}/>
+      <div className="photos-center">
+        {photos.map((image)=>{
+          return <Photo key={image.id} {...image}/>
         })}
       </div>
+      {loading && <h2 className='loading'>Loading...</h2>}
     </section>
   </main>
 }
