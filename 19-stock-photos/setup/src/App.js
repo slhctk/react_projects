@@ -45,6 +45,7 @@ function App() {
     <section className="photos">
       <div className="photos-center">
         {photos.map((image)=>{
+          console.log(image)
           return <Photo key={image.id} {...image}/>
         })}
       </div>
